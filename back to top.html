@@ -16,12 +16,13 @@
         <div id='d4'>Section 4</div>
 
 
+        <!--Icons can be placed inside the anchor tags, and styles can be altered accordingly-->
         <a id='scrolltotop' href='#'>Scroll to top</a>
 
 
 
         <style>
-            /* Miscelleneous styles */
+            /* Miscelleneous styles for the divs */
             div {
                 padding: 200px; }
             #d1 {
@@ -39,18 +40,18 @@
                 position: fixed;
                 right: 0;
                 bottom: 0;
-                margin: 10px;
                 background-color: cornflowerblue;
-                padding: 10px;
-                border-radius: 10px;
-                text-decoration: none;
-                color: white; }
+                margin: 10px;   /* distance around the object */
+                padding: 10px;  /* space inside the object */
+                border-radius: 10px;    /* curvature of object */
+                text-decoration: none;  /* remove the default style of anchor tag */
+                color: white; }       /* color of text inside object */
         </style>
 
         <script>
             /* SCROLL TO TOP jQuery code for smooth animation and fade effects */
-            var offset = 200;       //pixels for triggering the button
-            var duration = 300;     //miliseconds latency for animation
+            var offset = 200;       //pixels for triggering the button. More the value, more scrolling needed to trigger the button
+            var duration = 300;     //miliseconds latency for animation. More value, slower the animation
 
             $(window).scroll(function(){
                 if($(this).scrollTop() > offset){
