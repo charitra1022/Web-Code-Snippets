@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animated scroll next button</title>
+
+        <!-- jQuery import (important)-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <h1>SCROLL TO SOME SECTION Button demonstration</h1>
+        <h2>Scroll down to see the results</h2>
+
+        <div id='d1'>
+            Section 1 <br/>
+            <a href="#d2">scroll to section 2</a>
+        </div>
+
+        <div id='d2'>
+            Section 2<br/>
+            <a href="#d3">scroll to section 3</a>
+        </div>
+
+        <div id='d3'>
+            Section 3<br/>
+            <a href="#d4">scroll to section 4</a>
+        </div>
+
+        <div id='d4'>
+            Section 4<br/>
+            <a href="#d1">scroll to section 1</a>
+        </div>
+
+
+        <style>
+            /* Miscelleneous styles for the divs */
+            div {
+                padding: 200px; }
+            div a{
+                background-color: white; }
+            #d1 {
+                background-color: red; }
+            #d2 {
+            background-color: blue; }
+            #d3 {
+            background-color: green; }
+            #d4 {
+            background-color: pink; }
+
+
+            /* SCROLL TO TOP STYLES */
+            #scrolltotop{
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                background-color: cornflowerblue;
+                margin: 10px;   /* distance around the object */
+                padding: 10px;  /* space inside the object */
+                border-radius: 10px;    /* curvature of object */
+                text-decoration: none;  /* remove the default style of anchor tag */
+                color: white; }       /* color of text inside object */
+        </style>
+
+        <script>
+            /* SCROLL jQuery code for smooth animation/scrolling */
+            var duration = 300;     //miliseconds latency for animation. More value, slower the animation
+
+            $("a").on('click', function(event){     // animate all the anchor tags
+                if(this.hash!==''){
+                    event.preventDefault();
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                        }, duration, function(){
+                            window.location.hash = hash;
+                    });
+                }/* end-if */
+            }); /* on() */
+
+        </script>
+    </body>
+</html>
