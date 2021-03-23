@@ -23,7 +23,9 @@
   <body>
     <!-- Top Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
-      <a class="navbar-brand" href="."><strong>Brand Here</strong></a>
+      <a class="navbar-brand" href="./navigation active state scroll.html"
+        ><strong>Brand Here</strong></a
+      >
       <button
         class="navbar-toggler x"
         type="button"
@@ -42,7 +44,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="."
+            <a
+              class="nav-link active"
+              href="./navigation active state scroll.html"
               >Home<span class="sr-only">(current)</span></a
             >
           </li>
@@ -61,33 +65,53 @@
 
     <main>
       <!--Section 0-->
-      <div class="section" id="display-area" style="background-color: rgb(255, 136, 136);">
+      <div
+        class="section"
+        id="display-area"
+        style="background-color: rgb(255, 136, 136)"
+      >
         <h2>
           This is just for first imporessions like banner art and corousel
         </h2>
       </div>
 
       <!--Section 1-->
-      <div class="section" id="section1" style="background-color: rgb(115, 245, 115);">
+      <div
+        class="section"
+        id="section1"
+        style="background-color: rgb(115, 245, 115)"
+      >
         <h2>This is Section 1</h2>
       </div>
 
       <!--Section 2-->
-      <div class="section" id="section2" style="background-color: rgb(255, 136, 136);">
+      <div
+        class="section"
+        id="section2"
+        style="background-color: rgb(255, 136, 136)"
+      >
         <h2>This is Section 2</h2>
       </div>
 
       <!--Section 3-->
-      <div class="section" id="section3" style="background-color: rgb(115, 245, 115);">
+      <div
+        class="section"
+        id="section3"
+        style="background-color: rgb(115, 245, 115)"
+      >
         <h2>This is Section 3</h2>
       </div>
     </main>
 
     <style>
+      html{
+        scroll-behavior: smooth;    /* Adds smooth scrolling when section is navigated via links. BE FREE TO MANIPULATE THIS!!!! */
+      }
+
       /* just to create space in sections. Useless... */
       main div {
         height: 600px;
-        padding-top: 60px;
+        padding-top: 60px; /* this makes the sections appear below the navigation bar if navbar is fixed. BE FREE TO MANIPULATE IT!!!*/
       }
 
       /* =========================== NAVIGATION BAR ============================ */
@@ -236,9 +260,11 @@
     </style>
 
     <script>
+      /* All the jQuery Work */
+
       $(document).ready(function () {
         var offset = 300;
-        var duration = 500;
+        var duration = 200;       //Animation delay
         /* Scroll to next section script */
         $("a").on("click", function (event) {
           if (this.hash !== "") {
@@ -257,11 +283,10 @@
         }); /* on() */
       }); /* ready() */
 
-      var nav_sections = $(".section");
+      var nav_sections = $(".section"); // gets a list of the elements with section class
       var main_nav = $(".navbar");
 
       $(window).on("scroll", function () {
-        //$('html, body').animate({scrollTop: 200}, duration);
         var cur_pos = $(this).scrollTop() + 200;
 
         nav_sections.each(function () {
