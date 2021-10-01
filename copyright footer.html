@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Copyright Footer demonstration</title>
+    </head>
+    
+    <body>
+        <h1>Copyright Footer demonstration</h1>
+        <h2>Scroll to the end of the page to see the results</h2>
+
+        <!-- Some random things to display -->
+        <div id='d1'></div>
+        <div id='d2'></div>
+
+
+        <!-- &copy; is used to display the copyright symbol -->
+        <footer>
+            &copy; 2021 - 
+            <script>
+                document.write((new Date()).getFullYear())  //create a date object and extract current year from it.
+            </script>
+            Copyright: <a href="https://github.com/Chiku1022/Web-Code-Snippets">Charitra Agarwal</a>
+        </footer>
+
+
+        <style>
+            /* Miscelleneous styles for the divs */
+            div { padding: 200px; }
+            #d1 { background-color: red; }
+            #d2 { background-color: blue; }
+
+            footer {
+                margin-top: 20px;       /* Space before the webpage contents */
+                padding: 20px;          /* Space between the footer walls and contents */
+                text-align: center;     /* Center align the footer text for better view */
+                font-size: 20px;        /* increase the font size */
+                background-color: rgb(203, 204, 206);   /* change bg color to stand out */
+            }
+        </style>
+    </body>
+</html>
